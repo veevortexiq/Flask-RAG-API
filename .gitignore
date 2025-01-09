@@ -9,4 +9,3 @@ __pycache__/
 # Misc
 *.log
 .DS_Store
-app/functions/setup_langchain.py
