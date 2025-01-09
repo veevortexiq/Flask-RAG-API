@@ -9,7 +9,7 @@ from langchain.embeddings import OpenAIEmbeddings
 from app.utils.vector_store import init_vectorstore
 def preprocess_csv() :
     load_dotenv()
-    print("Preprocess starting")
+    print("Preprocess starting", os.getenv('OPENAI_API_KEY'))
     # Load dataset (replace with your dataset path)
     dataset_path = r"app\data\updated_csv.csv"
     data = pd.read_csv(dataset_path)
