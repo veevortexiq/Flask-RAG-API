@@ -1,4 +1,6 @@
 from langchain.chat_models import ChatOpenAI
+from dotenv import load_dotenv
+import os
 from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
 #retrieving vector store
@@ -7,7 +9,8 @@ from app.utils.vector_store import get_vectorstore
 from app.utils.chain_store import init_chain
 def setuplangchain():
     print("setting up langchain")
-    llm = ChatOpenAI(openai_api_key="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",model_name="gpt-3.5-turbo", temperature=0)
+    load_dotenv()
+    llm = ChatOpenAI(openai_api_key=os.getenv('OPENAI_API_KEY'),model_name="gpt-3.5-turbo", temperature=0)
     prompt_template = PromptTemplate(
     input_variables=["context", "question"],
     template="""
