@@ -10,7 +10,8 @@ from app.utils.chain_store import init_chain
 def setuplangchain():
     print("setting up langchain")
     load_dotenv()
-    llm = ChatOpenAI(openai_api_key=os.getenv('OPENAI_API_KEY'),model_name="gpt-3.5-turbo", temperature=0)
+    key = os.getenv('OPENAI_API_KEY')
+    llm = ChatOpenAI(openai_api_key=key,model_name="gpt-3.5-turbo", temperature=0)
     prompt_template = PromptTemplate(
     input_variables=["context", "question"],
     template="""
