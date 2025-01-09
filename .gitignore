@@ -5,17 +5,8 @@
 
 # Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-
-# IDE
-.vscode/
-.idea/
 
 # Misc
 *.log
 .DS_Store
+functions/setup_langchain.py
